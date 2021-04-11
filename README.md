@@ -1,2 +1,0 @@
-# Animations-using-Genetic-Algorithms
-Uses a genetic algorithm and specifically designed chromosome, which is a long binary number, to indicate how a pattern looks and acts. Start with an assortment of randomly generated color/pattern animations. Use on screen controls to breed the different patterns together to result in a new child pattern. Create multiple generations, use + and - key to add or delete points from a pattern while moused over, this score will effect chance to breed to next generation. 

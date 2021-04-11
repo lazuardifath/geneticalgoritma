@@ -1,30 +1,32 @@
-<!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
+<title>Pathfinding with Genetic Algorithm</title>
+<script type="text/javascript" src="jquery-1.4.3.js"></script>
 
-    <!--Edit index.html to change the title.-->
-    <title>HueGrid Array Phase 5</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 
-    <!--p5 libraries folder must be up one level from this html file-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js" integrity="sha256-w7+V9/jcjUhs0pVV3uaphYQbXkTJZkd/3CfsinPRzvM=" crossorigin="anonymous"></script>
-
-    <!--our own script should be in the same folder as this html file-->
-    <script type="text/javascript" src="Main.js"></script>
-    <script type="text/javascript" src="HueGrid.js"></script>
-    <script type="text/javascript" src="Genetics.js"></script>
- 
-    <style>
-        body {
-            padding: 0;
-            margin: 0;
-        }
-    </style>
 </head>
 
 <body>
-    <!--Add HTML content if you wish. It will appear above your sketch-->
-</body>
+<div id='map'>
+    <canvas id="canvas" width="800" height="800"></canvas>
+</div>
+<div id='container'>
+<div id='status'></div>
+<div id='controls'>
+    <div id='environment'>
+        Current environment:
+        <span id='environmentName'></span>
+    </div>
+</div>
+Paper: <a href=http://www-cvr.ai.uiuc.edu/~scandido/pdf/GApathplan.pdf>http://www-cvr.ai.uiuc.edu/~scandido/pdf/GApathplan.pdf</a>
+<div id='stats'></div>
+</div>
 
+
+</body>
+<script type="text/javascript" src="ga.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {     GA.init(); });
+</script>
 </html>
