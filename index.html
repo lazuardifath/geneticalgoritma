@@ -1,14 +1,72 @@
-<html>
-    <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.js"></script> -->
-        <script src="collide2d.js"></script>
-        <script src="sketch.js"></script>
-        <script src="car.js"></script>
-        <script src="population.js"></script>
-    </head>
-    <body>
-        <p id="gen">Generation= 0</p>
-        <p id="fit">Max fitness= 0</p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="row">
+    <div class="col-md-8">
+        <form id="playForm" class="form-inline navbar">
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Track</div>
+                </div>
+                <select id="trackSelector" name="track" class="form-control"></select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2 sm">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Pop.</div>
+                </div>
+                <input name="population" type="number" class="form-control" min="10" max="50" step="1" value="20">
+            </div>
+            <div class="input-group mb-2 mr-sm-2 sm">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Mut.</div>
+                </div>
+                <input name="mutationRate" type="number" class="form-control" min="0.1" max="0.9" step="0.1"
+                       value="0.5">
+            </div>
+            <div class="input-group mb-2 mr-sm-2 md">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Frames</div>
+                </div>
+                <input name="fps" type="number" class="form-control" min="10" max="600" step="20" value="350">
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary mb-2">Update & Play</button>
+                <button type="submit" id="stopButton" class="btn btn-danger mb-2">Stop</button>
+            </div>
+        </form>
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-light mb-3">
+            <div class="card-header">Gen. <span id="countGenerations"></span> (Alive <span id="countAlive"></span>/<span id="countPopulation"></span>)</div>
+            <table id="cars" class="table table-sm">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>IN</th>
+                    <th>OUT</th>
+                    <th>Dist.</th>
+                    <th>Score</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/lib/Network.class.js"></script>
+<script src="js/lib/Generations.class.js"></script>
+<script src="js/lib/GeneticDeep.class.js"></script>
+<script src="js/Game.class.js"></script>
+<script src="js/loader.js"></script>
+</body>
 </html>
