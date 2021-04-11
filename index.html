@@ -1,72 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Genetic Algorithm</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-<div class="row">
-    <div class="col-md-8">
-        <form id="playForm" class="form-inline navbar">
-            <div class="input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">Track</div>
-                </div>
-                <select id="trackSelector" name="track" class="form-control"></select>
+  <header>
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light mb-5">
+      <a class="navbar-brand" href="#">
+        <img src="https://cdn.pixabay.com/photo/2018/02/27/01/55/gene-icon-3184523_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        Genetic Algorithm
+      </a>
+    </nav>
+  </header>
+  <main class="container">
+    <div class="row justify-content-center">
+      <!-- col 1 -->
+      <div id="kol-total" class="col-md-6">
+        <section>
+          <form id="result-form" method="post" accept-charset="utf-8" class="mx-auto my-5">
+            <div class="form-group">
+              <label>Hasil</label>
+              <input type="number" name="hasil" id="hasil" value="1" min="1" class="form-control">
             </div>
-            <div class="input-group mb-2 mr-sm-2 sm">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">Pop.</div>
-                </div>
-                <input name="population" type="number" class="form-control" min="10" max="50" step="1" value="20">
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">
+                submit
+              </button>
             </div>
-            <div class="input-group mb-2 mr-sm-2 sm">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">Mut.</div>
-                </div>
-                <input name="mutationRate" type="number" class="form-control" min="0.1" max="0.9" step="0.1"
-                       value="0.5">
+          </form>
+        </section>
+      </div>
+      <!-- END col 1 -->
+      <!-- col 2 -->
+      <div id="kol-variable" class="col-md-6 d-none">
+        <section>
+          <form id="variable-form" method="post" accept-charset="utf-8" class="mx-auto">
+            <div class="form-group">
+              <label>Angka</label>
+              <input type="number" name="angka" id="angka" value="1" min="1" class="form-control">
             </div>
-            <div class="input-group mb-2 mr-sm-2 md">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">Frames</div>
-                </div>
-                <input name="fps" type="number" class="form-control" min="10" max="600" step="20" value="350">
+            <div class="form-group">
+              <label>Variable</label>
+              <select name="variable" id="variable" class="form-control">
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+                <option value="d">D</option>
+              </select>
             </div>
-            <div class="btn-group">
-                <button type="submit" class="btn btn-primary mb-2">Update & Play</button>
-                <button type="submit" id="stopButton" class="btn btn-danger mb-2">Stop</button>
+            <div class="form-group">
+              <label>Operator</label>
+              <select name="operator" id="operator" class="form-control">
+                <option value="+">+</option>
+                <option value="-">-</option>
+              </select>
             </div>
-        </form>
-        <canvas id="canvas"></canvas>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">
+                submit
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+      <!-- END col 2 -->
     </div>
-    <div class="col-md-4">
-        <div class="card border-light mb-3">
-            <div class="card-header">Gen. <span id="countGenerations"></span> (Alive <span id="countAlive"></span>/<span id="countPopulation"></span>)</div>
-            <table id="cars" class="table table-sm">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>IN</th>
-                    <th>OUT</th>
-                    <th>Dist.</th>
-                    <th>Score</th>
-                </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+    <div class="row justify-content-center align-items-center">
+      <!-- col 3 -->
+      <div id="kol-hasil" class="col-md-6 d-none">
+        <div class="my-5">
+          <h1 id="masalah" class="text-center"></h1>
+          <h2 id="final-result" class="text-center"></h2>
         </div>
-
+        <button id="btn-calculate" class="btn btn-success btn-block d-none">calculate</button>
+      </div>
+      <!-- END col 3 -->
     </div>
-</div>
-
-<script src="js/lib/Network.class.js"></script>
-<script src="js/lib/Generations.class.js"></script>
-<script src="js/lib/GeneticDeep.class.js"></script>
-<script src="js/Game.class.js"></script>
-<script src="js/loader.js"></script>
+    <div id="tabel-hasil" class="d-none">
+      <h2>Jumlah Iterasi <span id="iteration"></span></h2>
+      <table class="table table-bordered table-hover text-center">
+        <thead>
+          <tr>
+            <th>Populasi Ke-</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <script src="./index.js" charset="utf-8"></script>
 </body>
 </html>
