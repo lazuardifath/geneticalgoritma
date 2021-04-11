@@ -1,1 +1,2 @@
-![Alt text](Capture.PNG?raw=true "Optional Title")
+# genetic_algorithm_8puzzle
+Solving 8-puzzle problem using genetic algorithm

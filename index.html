@@ -1,191 +1,60 @@
 <!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Flight Scheduler</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="loadash.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
-        <nav>
-            <div class="nav-wrapper">
-              <a href="#" class="brand-logo">Logo</a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#">Sass</a></li>
-                <li><a href="#">Components</a></li>
-                <li><a href="#">JavaScript</a></li>
-              </ul>
-            </div>
-        </nav>
+<head>
 
-        <div class="row" style="height: calc(100vh - 64px) !important; margin-bottom: 0px;">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
 
-            <div class="col s5 full-height-container">
-                <div class="container">
-                    <h5 class="center-align">Analysis</h3>
-                </div>
-                <div class="chartContainer">
-                    <canvas id="myChart"></canvas>
-                    <div class="container">
-                        <a id="btn-solve" class="waves-effect waves-light btn">Solve</a>
-                    </div>
-                    <h5 id="h5-numSolutions">num Solutions: 0</h5>
-                </div>
-            </div>
-      
-            <div class="col s7 full-height-container">
-                <table class="striped centered">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>AC1</th>
-                            <th>AC2</th>
-                            <th>AC3</th>
-                        </tr>
-                    </thead>
+		<title>8 Puzzle</title>
+	</head>
+</head>
 
-                    <tbody>
-                        <tr>
-                            <td>0</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>BOM-PNQ</td>
-                            <td>KLH-IGX</td>
-                            <td>PNQ-BOM</td>
-                        </tr>
-                        
-                        
-                    </tbody>
-                </table>
-            </div>
-      
-        </div>
-              
+<body>
+	<div class="container-fluid h-100">
+		<div class="row justify-content-center h-100">
+			<div id="log" class="col-md-4 bg-dark text-light h-100">
+				<p class="text-muted text-center">----- start of log -----</p>
+				<div id="info"></div>
+			</div>
+			<div id="show" class="col-md-8 bg-light">
+				<div id="start" class="text-center">
+					<div id="title" class="mt-4">Starting State</div>
+					<div id="array"></div>
+					<div id="square">
+						<div id="index-0"></div>
+						<div id="index-1"></div>
+						<div id="index-2"></div>
+						<div id="index-3"></div>
+						<div id="index-4"></div>
+						<div id="index-5"></div>
+						<div id="index-6"></div>
+						<div id="index-7"></div>
+						<div id="index-8"></div>
+					</div>
+				</div>
+				<hr>
+				<table class="table table-sm text-center table-striped">
+					<thead>
+						<tr class="thead-dark">
+							<th scope="col">Generation Number</th>
+							<th scope="col">Solutions Number</th>
+						</tr>
+					</thead>
+					<tbody id="tableBody"></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 
-        <script src="global.js"></script>
-        <script src="Model.js"></script>
-        <script src="GA.js"></script>
-        <script src="main.js"></script>
-        <script src="web-worker.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </body>
+	<script src="js/jquery-3.0.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
 </html>
