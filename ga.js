@@ -210,8 +210,8 @@
                     ////return data.coord
                 }
             };
-        // xmlhttp.open("GET","https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="+nameStock+"&apikey=DVBV7U5PAU4WVL8M",false);
-         xmlhttp.open("GET","https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BBCA&apikey=DVBV7U5PAU4WVL8M",false);
+          xmlhttp.open("GET","https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="+nameStock+"&apikey=DVBV7U5PAU4WVL8M",false);
+         //xmlhttp.open("GET","https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BBCA&apikey=DVBV7U5PAU4WVL8M",false);
         xmlhttp.responseType = 'json'
         xmlhttp.send();
       return data
