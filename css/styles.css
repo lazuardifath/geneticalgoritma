@@ -1,7 +1,7 @@
 html,
 body {
     margin: 0;
-    padding: 10;
+    padding: 10px;
     background-color: #2d4864;
     color: #eeeeee;
     font-family: Ubuntu, Roboto, Calibri, sans-serif
@@ -40,10 +40,7 @@ h1 {
 }
 
 .explanation {
-    margin: 60px auto;
-    padding: 10px;
-    align-content: center;
-    text-align: center;
+    margin: 60px auto
 }
 
 .container {
