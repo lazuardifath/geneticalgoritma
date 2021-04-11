@@ -1,60 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html>
 <head>
-
-	<head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<link rel="stylesheet" href="css/style.css">
-
-		<title>8 Puzzle</title>
-	</head>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="jquery.sudoku.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <title>genetic Sudoku</title>  
 </head>
-
 <body>
-	<div class="container-fluid h-100">
-		<div class="row justify-content-center h-100">
-			<div id="log" class="col-md-4 bg-dark text-light h-100">
-				<p class="text-muted text-center">----- start of log -----</p>
-				<div id="info"></div>
-			</div>
-			<div id="show" class="col-md-8 bg-light">
-				<div id="start" class="text-center">
-					<div id="title" class="mt-4">Starting State</div>
-					<div id="array"></div>
-					<div id="square">
-						<div id="index-0"></div>
-						<div id="index-1"></div>
-						<div id="index-2"></div>
-						<div id="index-3"></div>
-						<div id="index-4"></div>
-						<div id="index-5"></div>
-						<div id="index-6"></div>
-						<div id="index-7"></div>
-						<div id="index-8"></div>
-					</div>
-				</div>
-				<hr>
-				<table class="table table-sm text-center table-striped">
-					<thead>
-						<tr class="thead-dark">
-							<th scope="col">Generation Number</th>
-							<th scope="col">Solutions Number</th>
-						</tr>
-					</thead>
-					<tbody id="tableBody"></tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+  <section id="todoapp">
+    <header id="header">
+     
+    </header>
+  
+  <section id="main">
+       <div class="myinstance"></div>
+  </section>
 
-	<script src="js/jquery-3.0.0.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/script.js"></script>
+  <script>
+    $(function() {
+       $(".myinstance").sudoku();      
+    });
+  </script>  
+  <!--script src="http://emberjs.com.s3.amazonaws.com/getting-started/handlebars.js"></script>
+  <script src="http://emberjs.com.s3.amazonaws.com/getting-started/ember.js"></script>
+  <script src="http://emberjs.com.s3.amazonaws.com/getting-started/ember-data.js"></script -->
 </body>
-
 </html>
