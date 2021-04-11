@@ -1,101 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Genetic Algorithm</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-</head>
-<body>
-  <header>
-    <!-- Image and text -->
-    <nav class="navbar navbar-light bg-light mb-5">
-      <a class="navbar-brand" href="#">
-        <img src="https://cdn.pixabay.com/photo/2018/02/27/01/55/gene-icon-3184523_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-        Genetic Algorithm
-      </a>
-    </nav>
-  </header>
-  <main class="container">
-    <div class="row justify-content-center">
-      <!-- col 1 -->
-      <div id="kol-total" class="col-md-6">
-        <section>
-          <form id="result-form" method="post" accept-charset="utf-8" class="mx-auto my-5">
-            <div class="form-group">
-              <label>Hasil</label>
-              <input type="number" name="hasil" id="hasil" value="1" min="1" class="form-control">
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block">
-                submit
-              </button>
-            </div>
-          </form>
-        </section>
-      </div>
-      <!-- END col 1 -->
-      <!-- col 2 -->
-      <div id="kol-variable" class="col-md-6 d-none">
-        <section>
-          <form id="variable-form" method="post" accept-charset="utf-8" class="mx-auto">
-            <div class="form-group">
-              <label>Angka</label>
-              <input type="number" name="angka" id="angka" value="1" min="1" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Variable</label>
-              <select name="variable" id="variable" class="form-control">
-                <option value="a">A</option>
-                <option value="b">B</option>
-                <option value="c">C</option>
-                <option value="d">D</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Operator</label>
-              <select name="operator" id="operator" class="form-control">
-                <option value="+">+</option>
-                <option value="-">-</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block">
-                submit
-              </button>
-            </div>
-          </form>
-        </section>
-      </div>
-      <!-- END col 2 -->
-    </div>
-    <div class="row justify-content-center align-items-center">
-      <!-- col 3 -->
-      <div id="kol-hasil" class="col-md-6 d-none">
-        <div class="my-5">
-          <h1 id="masalah" class="text-center"></h1>
-          <h2 id="final-result" class="text-center"></h2>
-        </div>
-        <button id="btn-calculate" class="btn btn-success btn-block d-none">calculate</button>
-      </div>
-      <!-- END col 3 -->
-    </div>
-    <div id="tabel-hasil" class="d-none">
-      <h2>Jumlah Iterasi <span id="iteration"></span></h2>
-      <table class="table table-bordered table-hover text-center">
-        <thead>
-          <tr>
-            <th>Populasi Ke-</th>
-            <th>A</th>
-            <th>B</th>
-            <th>C</th>
-            <th>D</th>
-          </tr>
-        </thead>
-        <tbody id="table-body">
-        </tbody>
-      </table>
-    </div>
-  </main>
-  <script src="./index.js" charset="utf-8"></script>
-</body>
+<html>
+  <head>
+    <script type="text/javascript" src="ga.js">
+
+    </script>
+  </head>
+  <body>
+    <h1>Memprediksi Harga Stok Menggunakan Algoritma Genetika</h1>
+    <br>
+    <label for ="namestock">Input Nama dari Stok: </label></br>
+      <input type="text" class="nameStock"><br><br>
+    
+    <button class="btnJs" onclick="cariPrediksi()">Click here!</button>
+
+    <p id="hasilPrediksi">Berikut Hasil Prediksinya</p>
+
+
+  </body>
+
 </html>
